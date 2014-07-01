@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -5,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
@@ -27,7 +29,7 @@ public class FrameImmagini extends JFrame {
 		campoTesto = new JTextField(20);
 		JButton testoButton = new JButton("Enter");
 		
-		// add listener e command to button
+		// aggiunta listener e command al button
 		testoButton.setActionCommand("Enter");
 		MyListener listener = new MyListener(this);
 		testoButton.addActionListener(listener);
@@ -38,6 +40,7 @@ public class FrameImmagini extends JFrame {
 		pannelloSuperiore.add(campoTesto);
 		pannelloSuperiore.add(testoButton);
 		
+		// creazione e aggiunta img al pannello centrale
 		JLabel img1 = new JLabel("1", JLabel.CENTER);
 		JLabel img2 = new JLabel("2", JLabel.CENTER);
 		JLabel img3 = new JLabel("3", JLabel.CENTER);
@@ -58,7 +61,46 @@ public class FrameImmagini extends JFrame {
 		pannelloCentrale.add(img8);
 		pannelloCentrale.add(img9);
 		
+		// creazione areaTesto e scroll
+		areaTesto = new JTextArea(5, 25);
+		areaTesto.setEditable(false);
+		JScrollPane scroll = new JScrollPane(areaTesto);
 		
+		// creazione button scarica e cancella
+		scarica = new JButton("Scarica!");
+		scarica.setActionCommand("scarica");
+		cancel = new JButton("Annulla");
+		cancel.setEnabled(false);
+		cancel.setActionCommand("cancel");
+		scarica.addActionListener(listener);
+		cancel.addActionListener(listener);
+		
+		// aggiunta label kb scaricati
+		download = new JLabel("--");
+		JLabel labelScaricati = new JLabel("KB scaricati: ");
+		barra = new JProgressBar();
+		
+		// creazione pannello bottoni e aggiunta bottoni
+		JPanel pannelloBottoni = new JPanel();
+		pannelloBottoni.add(scarica);
+		pannelloBottoni.add(cancel);
+		pannelloBottoni.add(labelScaricati);
+		pannelloBottoni.add(download);
+		pannelloBottoni.add(barra);
+		
+		// creazione pannello inferiore
+		JPanel pannelloInferiore = new JPanel(new BorderLayout());
+		pannelloInferiore.add(scroll, BorderLayout.CENTER);
+		pannelloInferiore.add(pannelloBottoni, BorderLayout.PAGE_END);
+		
+		// aggiunta dei tre pannelli
+		getContentPane().add(pannelloSuperiore, BorderLayout.PAGE_START);
+		getContentPane().add(pannelloCentrale, BorderLayout.CENTER);
+		getContentPane().add(pannelloInferiore, BorderLayout.PAGE_END);
+
+		setSize(700, 500);
+		setLocationRelativeTo(null);
+		setVisible(true);
 		
 		
 	}
