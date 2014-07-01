@@ -1,3 +1,5 @@
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -36,7 +38,28 @@ public class FrameImmagini extends JFrame {
 		pannelloSuperiore.add(campoTesto);
 		pannelloSuperiore.add(testoButton);
 		
-		JLabel img1 = new JLabel("1", JLabel.CENTER); 
+		JLabel img1 = new JLabel("1", JLabel.CENTER);
+		JLabel img2 = new JLabel("2", JLabel.CENTER);
+		JLabel img3 = new JLabel("3", JLabel.CENTER);
+		JLabel img4 = new JLabel("4", JLabel.CENTER);
+		JLabel img5 = new JLabel("5", JLabel.CENTER);
+		JLabel img6 = new JLabel("6", JLabel.CENTER);
+		JLabel img7 = new JLabel("7", JLabel.CENTER);
+		JLabel img8 = new JLabel("8", JLabel.CENTER);
+		JLabel img9 = new JLabel("9", JLabel.CENTER);
+		pannelloCentrale = new JPanel(new GridLayout(3, 3));
+		pannelloCentrale.add(img1);
+		pannelloCentrale.add(img2);
+		pannelloCentrale.add(img3);
+		pannelloCentrale.add(img4);
+		pannelloCentrale.add(img5);
+		pannelloCentrale.add(img6);
+		pannelloCentrale.add(img7);
+		pannelloCentrale.add(img8);
+		pannelloCentrale.add(img9);
+		
+		
+		
 		
 	}
 	
