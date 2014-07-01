@@ -36,7 +36,7 @@ public class FrameImmagini extends JFrame {
 		pannelloSuperiore.add(campoTesto);
 		pannelloSuperiore.add(testoButton);
 		
-		
+		JLabel img1 = new JLabel("1", JLabel.CENTER); 
 		
 	}
 	
